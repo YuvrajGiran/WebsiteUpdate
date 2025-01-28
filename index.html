@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvraj's Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c2f33;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        header {
+            text-align: center;
+            background: #007BFF;
+            color: white;
+            padding: 2rem 0;
+        }
+        header img {
+            border-radius: 50%;
+            margin: 1rem 0;
+        }
+        h1 {
+            color: #FFDD00;
+            margin-top: 1rem;
+        }
+        section {
+            padding: 2rem;
+            background: #444;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 1.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #007BFF;
+            color: white;
+            margin-top: 2rem;
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #FFDD00;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <img src="\Capstone 1\Apache Jungle.png" alt="Band pic" width="150" height="150">
+        <h1>Yuvraj Giran's Resume</h1>
+    </header>
+
+    <section>
+        <h1>Education</h1>
+        <p>Currently Pursuing a Bachelor's Degree in Computer Science (Software Engineering) at Arizona State University.</p>
+        <p>Graduated from Perry High School in 2022</p>
+    </section>
+
+    <section>
+        <h1>Summary</h1>
+        <p>I am a student at State University, studying computer science. I love learning about anything related to computers.
+            Alongside studying the inner workings of computers and algorithms, I am very interested in learning about the web, and the frontend of things that we see online.
+        </p>
+    </section>
+
+    <section>
+        <h1>Work Experience</h1>
+        <p>Worked with a colleague to develop a secure customer tracking database application for the beauty salon HDBrow&SkinRx
+            using JavaFx GUI. 
+        </p>
+    </section>
+
+    <section>
+        <h1>Skills</h1>
+        <ul>
+            <li>Java</li>
+            <li>JavaFx and GUI</li>
+            <li>C Programming Language</li>
+            <li>C++ Programming Language</li>
+            <li>Microsoft Office Applications</li>
+            <li>Video Editing and Special Effects</li>
+            <li>Deep understanding of computer software and hardware</li>
+            <li>Technical Writing</li>
+            <li>Data Analysis</li>
+        </ul>
+    </section>
+
+    <footer>
+        <small>&copy; Yuvraj Giran 2024</small>
+        <br>
+        <a href="contact.html">Contact Information</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 150,
+                    density: { enable: true, value_area: 800 }
+                },
+                color: { value: "#FFDD00" },
+                shape: {
+                    type: "circle",
+                    stroke: { width: 1, color: "#FFF" },
+                },
+                opacity: { value: 0.8, random: true },
+                size: { value: 4, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#FFDD00",
+                    opacity: 0.6,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: { enable: true, rotateX: 600, rotateY: 1200 }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100, duration: 0.4 },
+                    bubble: { distance: 200, size: 10, duration: 2, opacity: 0.8 },
+                    grab: { distance: 140, line_linked: { opacity: 1 } },
+                }
+            },
+            retina_detect: true
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const particles = window.pJSDom[0].pJS.particles.array;
+            particles.forEach(particle => {
+                const dx = particle.x - e.clientX;
+                const dy = particle.y - e.clientY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 150) {
+                    particle.vx -= dx * 0.01;
+                    particle.vy -= dy * 0.01;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
